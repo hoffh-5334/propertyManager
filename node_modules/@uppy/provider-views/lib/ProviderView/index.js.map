@@ -1,0 +1,1 @@
+{"version":3,"names":["default"],"sources":["index.js"],"sourcesContent":["export { default } from './ProviderView.jsx'\n"],"mappings":"AAAA,SAASA,OAAT,QAAwB,mBAAxB"}

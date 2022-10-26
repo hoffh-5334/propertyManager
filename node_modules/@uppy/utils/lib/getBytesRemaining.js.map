@@ -1,0 +1,1 @@
+{"version":3,"names":["getBytesRemaining","fileProgress","bytesTotal","bytesUploaded"],"sources":["getBytesRemaining.js"],"sourcesContent":["export default function getBytesRemaining (fileProgress) {\n  return fileProgress.bytesTotal - fileProgress.bytesUploaded\n}\n"],"mappings":"AAAA,eAAe,SAASA,iBAAT,CAA4BC,YAA5B,EAA0C;EACvD,OAAOA,YAAY,CAACC,UAAb,GAA0BD,YAAY,CAACE,aAA9C;AACD"}
