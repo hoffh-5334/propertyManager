@@ -1,0 +1,1 @@
+{"version":3,"names":["isTouchDevice","window","navigator"],"sources":["isTouchDevice.js"],"sourcesContent":["export default function isTouchDevice () {\n  return 'ontouchstart' in window || 'maxTouchPoints' in navigator\n}\n"],"mappings":"AAAA,eAAe,SAASA,aAAT,GAA0B;EACvC,OAAO,kBAAkBC,MAAlB,IAA4B,oBAAoBC,SAAvD;AACD"}
