@@ -5,7 +5,7 @@
         password: '123345678'
     },
     {
-        name: 'David',
+        name: 'david',
         email: 'dsmith@gmail.com',
         password: '87654321',
     },
