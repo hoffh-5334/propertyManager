@@ -6,6 +6,7 @@ class Payment extends Model { }
 
 
 
+
 Payment.init(
 
     {
