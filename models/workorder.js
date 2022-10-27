@@ -11,11 +11,15 @@ Project.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    title: {
+    priority: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    content: {
+    category: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    description: {
       type: DataTypes.TEXT,
       allowNull:false,
     },
@@ -25,11 +29,11 @@ Project.init(
       defaultValue: DataTypes.NOW,
     },
     fulfilled: {
-      type: DataTypes.STRING,
+      type: DataTypes.BOOLEAN,
       allowNull:false,
     },
     unit_id: {
-      type: DataTypes.BOOLEAN,
+      type: DataTypes.INTEGER,
       references: {
         model: 'unit',
         key: 'id',
