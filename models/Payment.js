@@ -2,11 +2,11 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 
-class Payments extends Model { }
+class Payment extends Model { }
 
 
 
-Payments.init(
+Payment.init(
 
     {
         id: {
@@ -42,9 +42,9 @@ Payments.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'user',
+        modelName: 'Payment',
 
     }
 );
 
-module.exports = Payments
+module.exports = Payment
