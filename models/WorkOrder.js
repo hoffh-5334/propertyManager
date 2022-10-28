@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class WorkOrder extends Model {}
+class WorkOrder extends Model { }
 
 
 WorkOrder.init(
@@ -22,7 +22,7 @@ WorkOrder.init(
     },
     description: {
       type: DataTypes.TEXT,
-      allowNull:false,
+      allowNull: false,
     },
     date_created: {
       type: DataTypes.DATE,
@@ -31,19 +31,13 @@ WorkOrder.init(
     },
     fulfilled: {
       type: DataTypes.BOOLEAN,
-      allowNull:false,
-    },
-    unit_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'unit',
-        key: 'id',
-      },
+      allowNull: false,
+      defaultValue: false
     },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'user',
+        model: 'User',
         key: 'id',
       },
     },

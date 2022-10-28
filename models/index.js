@@ -1,40 +1,50 @@
 const User = require('./User');
-const Role = require('./role2');
-const WorkOrder = require('./workorder2');
+const Role = require('./Role');
+const WorkOrder = require('./WorkOrder');
 const Unit = require('./Unit');
 const Payment = require('./Payment');
 
 // Relationships between models
 
 // User has one role
-User.hasOne(Role, {
-  foreignKey: 'role_id'
+Role.hasMany(User, {
+  foreignKey: 'role_id',
+  onDelete: 'SET NULL'
+
 });
 
 // User has one unit
 User.hasOne(Unit, {
-  foreignKey: 'user_id'
+  foreignKey: 'user_id',
+  onDelete: 'SET NULL'
 });
 
 // User has many work orders
 User.hasMany(WorkOrder, {
-  foreignKey: 'user_id'
+  foreignKey: 'user_id',
+  onDelete: 'SET NULL'
 });
 
 // User has many payments
 User.hasMany(Payment, {
-  foreignKey: 'user_id'
-});
-
-// Units have many work orders
-Unit.hasMany(WorkOrder, {
-  foreignKey: 'unit_id'
+  foreignKey: 'user_id',
+  onDelete: 'SET NULL'
 });
 
 // Units have many payments
-Unit.hasMany(Payment, {
-  foreignKey: 'unit_id'
-});
+// Unit.hasMany(Payment, {
+//   foreignKey: 'unit_id'
+// });
+
+// Units have many payments
+// Payment.belongsTo(Unit, {
+//   foreignKey: 'unit_id'
+// });
+
+// WorkOrder.belongsTo(User,
+//   { foreignKey: 'user_id' }
+// )
+
 
 module.exports = { User, Role, WorkOrder, Unit, Payment };
 
