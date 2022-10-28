@@ -6,6 +6,5 @@ const UnitRoutes = require('./UnitRoutes');
 router.use('/Users', UserRoutes);
 router.use('/WorkOrder', WorkOrderRoutes);
 router.use('/Unit', UnitRoutes);
-router.use('/Payment', PaymentRoutes);
 
 module.exports = router;
