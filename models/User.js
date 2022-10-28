@@ -33,12 +33,19 @@ User.init(
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
-
             },
         },
         admin: {
             type: DataTypes.BOOLEAN,
+            defaultValue: false
         },
+        role_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'Role',
+                key: "id"
+            }
+        }
     },
     {
         hooks: {

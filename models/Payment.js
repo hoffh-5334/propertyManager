@@ -4,9 +4,6 @@ const sequelize = require('../config/connection');
 
 class Payment extends Model { }
 
-
-
-
 Payment.init(
 
     {
@@ -28,23 +25,24 @@ Payment.init(
         user_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: 'user',
+                model: 'User',
                 key: 'id',
             },
         },
-        unit_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'unit',
-                key: 'id',
-            },
-        },
+        // unit_id: {
+        //     type: DataTypes.INTEGER,
+        //     references: {
+        //         model: 'Unit',
+        //         key: 'id',
+        //     },
+        // }
+    },
+    {
         sequelize,
         timestamps: false,
         freezeTableName: true,
         underscored: true,
         modelName: 'Payment',
-
     }
 );
 
