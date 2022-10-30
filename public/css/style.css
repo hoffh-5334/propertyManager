@@ -1,11 +1,13 @@
 /* Body */
 body {
   background-color: #167D7F;
+  font-family: Open Sans;
 }
 
 /* Header */
 header {
   text-align: center;
+  font-family: Open Sans;
 }
 
 .logo-image {
@@ -32,6 +34,7 @@ a:hover {
   text-align: center;
   padding: 1rem;
   color: white;
+  font: 'Open Sans';
 }
 
 /* Unit Cards */
