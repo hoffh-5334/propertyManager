@@ -1,0 +1,49 @@
+/* Body */
+body {
+  background-color: #167D7F;
+  font-family: Open Sans;
+}
+
+/* Header */
+header {
+  text-align: center;
+  font-family: Open Sans;
+}
+
+.logo-image {
+  max-width: 50%;
+  height: auto;
+}
+
+/* Navigational Menu */
+.nav-button {
+  color: white;
+  padding-right: 1rem;
+}
+
+a:visited, a:link {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #d2d1d1;
+}
+
+#homepage-greeting {
+  text-align: center;
+  padding: 1rem;
+  color: white;
+  font: 'Open Sans';
+}
+
+/* Unit Cards */
+.unit-card-section {
+  display: flex;
+  justify-content: center;
+}
+
+#unit-card-image {
+  max-width: 30%;
+  height: auto;
+}
