@@ -37,13 +37,47 @@ a:hover {
   font: 'Open Sans';
 }
 
+/* Image Carousel */
+.image-slider {
+  clear: both;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.slick {
+  width: 50%;
+}
+
+.slider-image {
+  width: 100%;
+  height: auto;
+}
+
 /* Unit Cards */
 .unit-card-section {
   display: flex;
   justify-content: center;
+  padding: 1rem;
 }
 
 #unit-card-image {
   max-width: 30%;
   height: auto;
+}
+
+/* More Info Button */
+.more-info-button {
+  background-color: #16497f;
+        border-radius: 15px;
+        color: white;
+        padding: 5px 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: small;
+        margin: 4px 2px;
+        cursor: pointer;
 }

@@ -1,25 +1,25 @@
 {{!-- Welcome text --}}
 <h1 id="homepage-greeting">Welcome to MMHD Residences!</h1>
-  <h4 id="homepage-greeting">Offering a luxury apartment experience with unrivaled amenities.
+  <h5 id="homepage-greeting">Offering a luxury apartment experience with unrivaled amenities.
   <div>
   Our award-winning management team sets us apart.
   </div>
-  </h4>
+  </h5>
 
-{{!-- Image slider using Slick   --}}
+{{!-- Image gallery using Slick slider --}}
 <section class="image-slider">
   <div class="slick">
-    <div><img src="images/gallery-image-1.png"></div>
-    <div><img src="images/gallery-image-2.png"></div>
-    <div><img src="images/gallery-image-3.png"></div>
-    <div><img src="images/gallery-image-4.png"></div>
-    <div><img src="images/gallery-image-5.png"></div>
-    <div><img src="images/gallery-image-6.png"></div>
-    <div><img src="images/gallery-image-7.png"></div>
-    <div><img src="images/gallery-image-8.png"></div>
+    <div class="image-div"><img src="images/gallery-image-1.png" alt="dining/living area" class="slider-image"></div>
+    <div class="image-div"><img src="images/gallery-image-2.png" alt="open concept dining area" class="slider-image"></div>
+    <div class="image-div"><img src="images/gallery-image-3.png" alt="dining area facing bedroom" class="slider-image"></div>
+    <div class="image-div"><img src="images/gallery-image-4.png" alt="living area facing kitchen" class="slider-image"></div>
+    <div class="image-div"><img src="images/gallery-image-5.png" alt="bedroom" class="slider-image"></div>
+    <div class="image-div"><img src="images/gallery-image-6.png" alt="living area facing patio" class="slider-image"></div>
+    <div class="image-div"><img src="images/gallery-image-7.png" alt="apartment building exterior" class="slider-image"></div>
+    <div class="image-div"><img src="images/gallery-image-8.png" alt="outdoor pool area" class="slider-image"></div>
   </div>
 </section>
-  
+
 {{!-- Display each unit in a card --}}
 {{#each unitData as |unit|}}
 <section class="unit-card-section">
@@ -29,7 +29,7 @@
       <h5 class="card-title">{{unit.name}} - {{unit.sqft}} sq.ft.</h5>
       <p class="card-text">{{unit.description}}</p>
       <p class="card-text"><small class="text-muted">Available On: {{format_date unit.date_available}}</small></p>
-      <button type="button" class="btn btn-secondary btn-sm">More Info</button>
+      <a class="more-info-button" href="/unit/{{id}}">More Info</a>
     </div>
   </div>
 </section>
