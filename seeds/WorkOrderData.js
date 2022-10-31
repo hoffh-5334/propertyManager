@@ -11,11 +11,11 @@ const WorkOrderData = [
   },
   {
     priority: 'high',
-    category: 'Plumbing',
-    date_created: 'October 27, 2022',
-    description: 'Kitchen sink is leaking from faucet',
+    category: 'Windows',
+    date_created: 'October 30, 2022',
+    description: 'Window broke from child throwing rock at window.',
     fulfilled: false,
-    user_id: 1,
+    user_id: 4,
   },
   {
     priority: 'low',
