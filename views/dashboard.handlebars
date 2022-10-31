@@ -6,6 +6,7 @@
   <h5>Not actual design. Only a test for data.</h5>
   {{#each data as |user|}}
     <p>{{user.name}}</p>
+    <p>{{user.id}}</p>
     <ul>
       {{#if user.WorkOrders}}
       {{#each user.WorkOrders as |wo|}}
