@@ -10,10 +10,10 @@ const WorkOrderData = [
     user_id: 1,
   },
   {
-    priority: 'high',
-    category: 'Windows',
+    priority: 'medium',
+    category: 'Appliances',
     date_created: 'October 30, 2022',
-    description: 'Window broke from child throwing rock at window.',
+    description: 'Dishwasher is leaking.',
     fulfilled: false,
     user_id: 4,
   },
