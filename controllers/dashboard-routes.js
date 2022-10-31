@@ -4,18 +4,16 @@ const auth = require('../utils/auth')
 const { User, Role, Unit, WorkOrder } = require('../models');
 
 // Only allow logged-in users access to dashboard
-// router.use(auth);
+router.use(auth);
 
 router.get('/', async (req, res) => {
     try {
         let userData;
         let data;
         // Replace userId and admin with values from cookie
-        let userId = 2;
-        let admin = false;
+        let userId = req.session.user_id;
 
-
-        if (admin === true) {
+        if (req.session.admin) {
             console.log("is admin")
             userData = await User.findAll({
                 attributes: ['id', 'name', 'email', 'admin', 'role_id'],
