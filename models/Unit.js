@@ -74,6 +74,10 @@ Unit.init(
                 key: 'id',
             },
         },
+        floor_plan: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
     },
     {
         sequelize,
