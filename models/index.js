@@ -2,7 +2,6 @@ const User = require('./User');
 const Role = require('./Role');
 const WorkOrder = require('./WorkOrder');
 const Unit = require('./Unit');
-const Payment = require('./Payment');
 
 // Relationships between models
 
@@ -26,10 +25,7 @@ User.hasMany(WorkOrder, {
 });
 
 // User has many payments
-User.hasMany(Payment, {
-  foreignKey: 'user_id',
-  onDelete: 'SET NULL'
-});
+
 
 // Units have many payments
 // Unit.hasMany(Payment, {
@@ -46,7 +42,7 @@ User.hasMany(Payment, {
 // )
 
 
-module.exports = { User, Role, WorkOrder, Unit, Payment };
+module.exports = { User, Role, WorkOrder, Unit};
 
 
 
