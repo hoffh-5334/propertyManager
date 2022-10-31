@@ -9,25 +9,25 @@
 {{!-- Image gallery using Slick slider --}}
 <section class="image-slider">
   <div class="slick">
-    <div class="image-div"><img src="images/gallery-image-1.png" alt="dining/living area" class="slider-image"></div>
-    <div class="image-div"><img src="images/gallery-image-2.png" alt="open concept dining area" class="slider-image"></div>
-    <div class="image-div"><img src="images/gallery-image-3.png" alt="dining area facing bedroom" class="slider-image"></div>
-    <div class="image-div"><img src="images/gallery-image-4.png" alt="living area facing kitchen" class="slider-image"></div>
-    <div class="image-div"><img src="images/gallery-image-5.png" alt="bedroom" class="slider-image"></div>
-    <div class="image-div"><img src="images/gallery-image-6.png" alt="living area facing patio" class="slider-image"></div>
-    <div class="image-div"><img src="images/gallery-image-7.png" alt="apartment building exterior" class="slider-image"></div>
-    <div class="image-div"><img src="images/gallery-image-8.png" alt="outdoor pool area" class="slider-image"></div>
+    <div class="image-div"><img src="/images/gallery-image-1.png" alt="dining/living area" class="slider-image"></div>
+    <div class="image-div"><img src="/images/gallery-image-2.png" alt="open concept dining area" class="slider-image"></div>
+    <div class="image-div"><img src="/images/gallery-image-3.png" alt="dining area facing bedroom" class="slider-image"></div>
+    <div class="image-div"><img src="/images/gallery-image-4.png" alt="living area facing kitchen" class="slider-image"></div>
+    <div class="image-div"><img src="/images/gallery-image-5.png" alt="bedroom" class="slider-image"></div>
+    <div class="image-div"><img src="/images/gallery-image-6.png" alt="living area facing patio" class="slider-image"></div>
+    <div class="image-div"><img src="/images/gallery-image-7.png" alt="apartment building exterior" class="slider-image"></div>
+    <div class="image-div"><img src="/images/gallery-image-8.png" alt="outdoor pool area" class="slider-image"></div>
   </div>
 </section>
 
 {{!-- Display each unit in a card --}}
 {{#each unitData as |unit|}}
 <section class="unit-card-section">
-  <div class="card mb-3 w-75" id="unit-cards">
-    <img src="images/floor-plan-1.png" class="card-img-top" id="unit-card-image" alt="unit floor plan">
+  <div class="card mb-3 w-50" id="unit-cards">
+    <img src="/images/floor-plan-1.png" class="card-img-top" id="unit-card-image" alt="unit floor plan">
     <div class="card-body">
       <h5 class="card-title">{{unit.name}} - {{unit.sqft}} sq.ft.</h5>
-      <p class="card-text">{{unit.description}}</p>
+      <p class="card-text">{{text_length_restrict unit.description}}</p>
       <p class="card-text"><small class="text-muted">Available On: {{format_date unit.date_available}}</small></p>
       <a class="more-info-button" href="/unit/{{id}}">More Info</a>
     </div>
