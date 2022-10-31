@@ -1,3 +1,5 @@
+<h2 id="single-unit-heading">{{name}} Apartment</h2>
+
 {{!-- Image gallery using Slick slider --}}
 <section class="image-slider">
   <div class="slick">
@@ -22,7 +24,7 @@
       <p>Beds: {{bed}}, Baths: {{bath}}</p>
       <p>Floor Number: {{floor}}</p>
       <p>Estimated Monthly Rent: ${{rent_cost}}</p>
-      <p class="card-text"><small class="text-muted">Available On: {{date_available}}</small></p>
+      <p class="card-text"><small class="text-muted">Available On: {{format_date date_available}}</small></p>
     </div>
   </div>
 </section>
