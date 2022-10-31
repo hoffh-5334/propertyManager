@@ -2,7 +2,15 @@ const { WorkOrder } = require('../models');
 
 const WorkOrderData = [
   {
-    priority: 'High',
+    priority: 'high',
+    category: 'Plumbing',
+    date_created: 'October 27, 2022',
+    description: 'Kitchen sink is leaking from faucet',
+    fulfilled: false,
+    user_id: 1,
+  },
+  {
+    priority: 'high',
     category: 'Plumbing',
     date_created: 'October 27, 2022',
     description: 'Kitchen sink is leaking from faucet',

@@ -1,0 +1,49 @@
+<div id="work-order-update-form-wrapper">
+    <form id="update-work-order-form" class="row d-flex flex-column">
+        <h4>Work Order #<span id="word-order-update-id-display"></span></h4>
+        <input type="hidden" id="id-update" name="work-order-id-update">
+        <div class="form-group">
+            <label for="priority-update">Priority</label>
+            <select id="priority-update" class="form-control">
+                <option value="high">High</option>
+                <option value="medium">Medium</option>
+                <option value="low">Low</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="category-update">Category</label>
+            <select id="category-update" class="form-control">
+                {{> workOrderCategoryOptions}}
+            </select>
+        </div>
+        <div class="form-group">
+            <label
+                for="description-update"
+                class="col col-form-label"
+            >Description</label>
+            <div>
+                <textarea rows="4" class="form-control" id="description-update" required ></textarea>
+            </div>
+        </div>
+        <div class="form-group row">
+        {{!-- <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon03"><i class="fa-solid fa-image"></i></button>
+            </div>
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" id="inputGroupFile03" aria-describedby="inputGroupFileAddon03"></input>
+                <label class="custom-file-label" for="inputGroupFile03">Upload an image</label>
+            </div>
+        </div> --}}
+        </div>
+        {{!-- <button type="submit" class="btn btn-primary">Create Request</button>               --}}
+        <div class="modal-footer">
+            <button
+            type="button"
+            class="btn btn-secondary"
+            data-dismiss="modal"
+            >Close</button>
+            <input type="submit" value="Save Changes" class="btn btn-primary"></input>
+        </div>
+    </form>
+</div>

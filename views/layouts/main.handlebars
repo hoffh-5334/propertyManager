@@ -1,51 +1,93 @@
-<!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MMHD Residences Property Management</title>
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Public+Sans:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet"
-    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
-  <link rel="stylesheet" href="/css/style.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MMHD Residences Property Management</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/6f90f15f89.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Public+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+    {{! Bootstrap and jquery script }}
+    <script
+      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+      integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-<body>
-  <header>
-    <img src="images/mmhd-residences-logo.png" class="logo-image" alt="MMHD Residences Logo">
-    <nav class="navbar navbar-expand-lg navbar-light justify-content-end" style="background-color: #16497f;">
-      <a href="/" class="nav-button">Home</a>
-      <!-- Conditionally render login, logout, & register links -->
-      {{#if logged_in}}
-      <a href="/dashboard class="nav-button"">Dashboard</a>
-      <a href="/logout" class="nav-button">Logout</a>
-      {{else}}
-      <a href="/login" class="nav-button">Login</a>
-      <a href="/register" class="nav-button">Register</a>
-      {{/if}}
-    </nav>
-  </header>
-  <main>
-    <!-- Render the view -->
-    {{{ body }}}
-    
-  </main>
-  <footer>
+  <body>
+    <header>
+      <img
+        src="images/mmhd-residences-logo.png"
+        class="logo-image"
+        alt="MMHD Residences Logo"
+      />
+      <nav
+        class="navbar navbar-expand-lg navbar-light justify-content-end"
+        style="background-color: #16497f;"
+      >
+        <a href="/" class="nav-button">Home</a>
+        <!-- Conditionally render login, logout, & register links -->
+        {{#if logged_in}}
+          <a href="/dashboard" class="nav-button">Dashboard</a>
+          <a href="/logout" class="nav-button">Logout</a>
+        {{else}}
+          <a href="/dashboard" class="nav-button">Dashboard</a>
+          <a href="/login" class="nav-button">Login</a>
+          <a href="/register" class="nav-button">Register</a>
+        {{/if}}
+      </nav>
+    </header>
+    <main>
+      <!-- Render the view -->
+      {{{body}}}
 
-  </footer>
-  <!-- Render script for logged in users only -->
-  {{#if logged_in}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
+    </main>
+    <footer>
 
+    </footer>
+    <!-- Render script for logged in users only -->
+    {{#if logged_in}}
+      <script src="/js/logout.js"></script>
+    {{/if}}
 
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-<script src="/js/slick.js"></script>
-</body>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
+    ></script>
+    <script src="/js/slick.js"></script>
+  </body>
 </html>

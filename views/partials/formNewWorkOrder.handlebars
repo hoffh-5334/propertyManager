@@ -1,0 +1,41 @@
+<div id="work-order-form-wrapper" class="d-flex flex-column justify-content-center align-items-center">
+    <h2>Submit a Work Order</h2>
+    <h5>Welcome Back {{data.name}}</h5>
+    <form id="work-order-form" class="d-flex flex-column">
+        <div class="form-group">
+            <label for="priority-input">Priority</label>
+            <select id="priority-input" class="form-control">
+                <option value="high">High</option>
+                <option value="medium">Medium</option>
+                <option value="low">Low</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="category-input">Category</label>
+            <select id="category-input" class="form-control">
+                {{> workOrderCategoryOptions}}
+            </select>
+        </div>
+        <div class="form-group">
+            <label
+                for="description-input"
+                class="col col-form-label"
+            >Description</label>
+            <div class="row">
+                <textarea rows="4" class="form-control" id="description-input" required></textarea>
+            </div>
+        </div>
+        <div class="form-group">
+        {{!-- <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon03"><i class="fa-solid fa-image"></i></button>
+            </div>
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" id="inputGroupFile03" aria-describedby="inputGroupFileAddon03"></input>
+                <label class="custom-file-label" for="inputGroupFile03">Upload an image</label>
+            </div>
+        </div> --}}
+        </div>
+        <button type="submit" class="btn btn-primary align-self-center">Create Request</button>              
+    </form>
+</div>
