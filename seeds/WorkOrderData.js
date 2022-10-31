@@ -10,12 +10,12 @@ const WorkOrderData = [
     user_id: 1,
   },
   {
-    priority: 'high',
-    category: 'Plumbing',
-    date_created: 'October 27, 2022',
-    description: 'Kitchen sink is leaking from faucet',
+    priority: 'medium',
+    category: 'Appliances',
+    date_created: 'October 30, 2022',
+    description: 'Dishwasher is leaking.',
     fulfilled: false,
-    user_id: 1,
+    user_id: 4,
   },
   {
     priority: 'low',
