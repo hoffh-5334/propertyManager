@@ -15,6 +15,20 @@ router.get('/', async (req, res) => {
   }
 });
 
+// GET single unit by unit id
+router.get('/unit/:id', async (req, res) => {
+  try {
+    const singleUnitdata = await Unit.findByPk(req.params.id);
+
+    const singleUnit = singleUnitdata.get({plain: true});
+
+    res.render('singleUnit', {...singleUnit, loggedIn: req.session.loggedIn});
+  } catch (err) {
+    console.log(err);
+    res.status.json(err);
+  }
+});
+
 // Login
 router.get('/login', (req, res) => {
   if(req.session.loggedIn) {

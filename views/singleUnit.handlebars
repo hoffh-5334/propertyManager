@@ -1,11 +1,3 @@
-{{!-- Welcome text --}}
-<h1 id="homepage-greeting">Welcome to MMHD Residences!</h1>
-  <h5 id="homepage-greeting">Offering a luxury apartment experience with unrivaled amenities.
-  <div>
-  Our award-winning management team sets us apart.
-  </div>
-  </h5>
-
 {{!-- Image gallery using Slick slider --}}
 <section class="image-slider">
   <div class="slick">
@@ -20,17 +12,17 @@
   </div>
 </section>
 
-{{!-- Display each unit in a card --}}
-{{#each unitData as |unit|}}
+{{!-- Single unit card --}}      
 <section class="unit-card-section">
-  <div class="card mb-3 w-50" id="unit-cards">
+  <div class="card mb-3 w-75" id="unit-cards">
     <img src="/images/floor-plan-1.png" class="card-img-top" id="unit-card-image" alt="unit floor plan">
     <div class="card-body">
-      <h5 class="card-title">{{unit.name}} - {{unit.sqft}} sq.ft.</h5>
-      <p class="card-text">{{text_length_restrict unit.description}}</p>
-      <p class="card-text"><small class="text-muted">Available On: {{format_date unit.date_available}}</small></p>
-      <a class="more-info-button" href="/unit/{{id}}">More Info</a>
+      <h5 class="card-title">{{name}} - {{sqft}} sq.ft.</h5>
+      <p class="card-text">{{description}}</p>
+      <p>Beds: {{bed}}, Baths: {{bath}}</p>
+      <p>Floor Number: {{floor}}</p>
+      <p>Estimated Monthly Rent: ${{rent_cost}}</p>
+      <p class="card-text"><small class="text-muted">Available On: {{date_available}}</small></p>
     </div>
   </div>
 </section>
-{{/each}}
