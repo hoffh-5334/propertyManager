@@ -1,6 +1,12 @@
+* {
+  box-sizing: border-box; 
+  margin: 0;
+  padding: 0;
+}
+
 /* Body */
 body {
-  background-color: #167D7F;
+  background-color: #167d7f;
   font-family: Open Sans;
 }
 
@@ -21,7 +27,8 @@ header {
   padding-right: 1rem;
 }
 
-a:visited, a:link {
+a:visited,
+a:link {
   color: white;
   text-decoration: none;
 }
@@ -34,7 +41,26 @@ a:hover {
   text-align: center;
   padding: 1rem;
   color: white;
-  font: 'Open Sans';
+  font: "Open Sans";
+}
+
+/* Image Carousel */
+.image-slider {
+  clear: both;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.slick {
+  width: 50%;
+}
+
+.slider-image {
+  width: 100%;
+  height: auto;
 }
 
 /* Image Carousel */
@@ -80,4 +106,71 @@ a:hover {
         font-size: small;
         margin: 4px 2px;
         cursor: pointer;
+}
+
+/* Dashboard */
+#dashboard-container {
+  background-color: #fff;
+}
+
+/* Work Order */
+#new-work-order-form-container {
+  box-shadow: rgb(0 0 0 / 10%) 1px 1px 10px 1px;
+  padding: 2rem 1rem;
+  margin: 3rem 0 3rem 0;
+  border-radius: 10px;
+  min-width: 320px; 
+}
+
+#work-order-form-wrapper {
+  padding: 1rem;
+  min-width: 100%; 
+}
+
+#work-order-form {
+  min-width: 100%; 
+}
+
+.modal-content {
+  padding: 1rem; 
+}
+
+#work-order-update-form-wrapper {
+  padding: 1rem; 
+}
+
+.col-form-label {
+  padding: 0; 
+}
+
+/* Work Order Table */
+#table-container {
+  margin: 1rem 0 5rem 0;
+}
+
+.tbl-btns {
+  box-shadow: rgb(0 0 0 / 10%) 1px 1px 5px 1px;
+  border: none;
+  background-color: none;
+}
+
+.tbl-btns:hover {
+  border: none;
+  background-color: none;
+  color: #f55149;
+  transition: 150ms ease-in-out;
+}
+
+.edit:hover {
+  border: none;
+  /* background-color: none; */
+  color: #58a6ff;
+  /* color: white; */
+  transition: 150ms ease-in-out;
+}
+
+.tbl-btns:active {
+  border: none;
+  background-color: none;
+  outline: none;
 }

@@ -3,10 +3,13 @@ const { WorkOrder } = require('../../models');
 
 router.post('/', async (req, res) => {
   try {
-    const newWorkOrder = await WorkOrder.create({
-      ...req.body,
-      user_id: req.session.user_id,
-    });
+    // Commented out until session cookies are used
+    // const newWorkOrder = await WorkOrder.create({
+    //   ...req.body,
+    //   user_id: req.session.user_id,
+    // });
+
+    const newWorkOrder = await WorkOrder.create(req.body);
 
     res.status(200).json(newWorkOrder);
   } catch (err) {
@@ -19,7 +22,6 @@ router.delete('/:id', async (req, res) => {
     const WorkOrderData = await WorkOrder.destroy({
       where: {
         id: req.params.id,
-        user_id: req.session.user_id,
       },
     });
 
@@ -33,5 +35,27 @@ router.delete('/:id', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+router.put('/', async (req, res) => {
+  try {
+    console.log(req.body)
+    const WorkOrderData = await WorkOrder.update(req.body, {
+      where: {
+        id: req.body.id
+      },
+
+    });
+
+    if (!WorkOrderData) {
+      res.status(404).json({ msg: 'No work order found with this id!' });
+      return;
+    }
+
+    res.status(200).json({ msg: "success" });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 
 module.exports = router;

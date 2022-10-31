@@ -1,0 +1,71 @@
+{{#if data.WorkOrders }}
+<div class="row col-6">
+  <h2>Work Orders</h2>
+</div>
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Date</th>
+      <th scope="col">Priority</th>
+      <th scope="col">Category</th>
+      <th scope="col">Description</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each data.WorkOrders as |wo|}}
+      <tr
+        id="work-order-row"
+        data-id={{wo.id}}
+        data-priority={{wo.priority}}
+        data-category={{wo.category}}
+        data-description={{wo.description}}
+      >
+        <th scope="row">{{wo.id}}</th>
+        <td> {{format_date wo.date_created}}</td>
+        <td><span
+            class="badge badge-pill badge-{{setPriorityColor wo.priority}}"
+          >{{wo.priority}}</span></td>
+        <td>{{wo.category}}</td>
+        <td id={{wo.id}}-description>{{wo.description}}</td>
+        <td>
+          <!-- Button trigger modal -->
+          <button
+            type="button"
+            class="btn btn-light tbl-btns edit"
+            data-toggle="modal"
+            data-target="#editWorkOrderModal"
+          >
+            <i class="fa-solid fa-pen-to-square"></i>
+          </button>
+        </td>
+        <td>
+          <button id="delete-work-order-btn" data-id={{wo.id}} class="btn btn-light tbl-btns" title="Delete"><i
+              class="fa-solid fa-trash"
+            ></i></button>
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
+{{else}}
+<div class="row col-6">
+  <h2>Work Orders</h2>
+</div>
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Date</th>
+      <th scope="col">Priority</th>
+      <th scope="col">Category</th>
+      <th scope="col">Description</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+</table>
+<h5>No work orders requested</h4>
+{{/if}}
