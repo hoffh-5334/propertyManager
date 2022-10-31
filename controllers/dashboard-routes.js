@@ -27,7 +27,7 @@ router.get('/', async (req, res) => {
             // console.log(userData)
             data = userData.map((item) => item.get({ plain: true }));
             // console.log(data)
-            res.render('dashboard', { data, admin })
+            res.render('dashboard', { data, admin, loggedIn: req.session.loggedIn })
         } else {
             userData = await User.findOne({
                 where: { id: userId },
@@ -39,7 +39,7 @@ router.get('/', async (req, res) => {
                 order: [[{ model: WorkOrder }, 'date_created', 'DESC']]
             });
             data = userData.get({ plain: true });
-            res.render('dashboard', { data })
+            res.render('dashboard', { data, loggedIn: req.session.loggedIn })
         }
     } catch (err) {
         res.status(500).json({ msg: err.message });

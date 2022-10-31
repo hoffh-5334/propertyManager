@@ -27,6 +27,11 @@ header {
   padding-right: 1rem;
 }
 
+.btn.nav-button {
+  padding: 0;
+  padding-right: 1rem; 
+}
+
 a:visited,
 a:link {
   color: white;
@@ -35,6 +40,12 @@ a:link {
 
 a:hover {
   color: #d2d1d1;
+}
+
+.btn.nav-button:hover {
+  color: #d2d1d1;
+  padding: 0;
+  padding-right: 1rem; 
 }
 
 #homepage-greeting {
