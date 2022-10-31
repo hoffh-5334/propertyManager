@@ -94,6 +94,13 @@ a:hover {
   height: auto;
 }
 
+/* Single Unit Page */
+#single-unit-heading {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
 /* More Info Button */
 .more-info-button {
   background-color: #16497f;
