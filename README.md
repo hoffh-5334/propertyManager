@@ -71,11 +71,12 @@ The dashboard for property managers (users with admin rights) can view all work 
 
 ## Deployed Application
 
-[MMHD Residences Property Management]()
+[MMHD Residences Property Management](https://propertymanager-production.up.railway.app/)
 
 ![Screenshot 1](./public/images/screenshot-homepage.png)
 ![Screenshot 2](./public/images/screenshot-single-unit.png)
 ![Screenshot 3](./public/images/screenshot-tenant-dash.png)
+![Screenshot 4](./public/images/screenshot-manager-dash.png)
 
 ## License 
 
