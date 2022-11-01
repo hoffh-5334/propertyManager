@@ -6,9 +6,9 @@ router.get('/', async (req, res) => {
   try {
     const allUnits = await Unit.findAll()
 
-    const unitData = allUnits.map((unit) => unit.get({plain: true}))
-   
-    res.render('homepage', {unitData, loggedIn: req.session.loggedIn})
+    const unitData = allUnits.map((unit) => unit.get({ plain: true }))
+
+    res.render('homepage', { unitData, loggedIn: req.session.loggedIn })
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -20,9 +20,9 @@ router.get('/unit/:id', async (req, res) => {
   try {
     const singleUnitdata = await Unit.findByPk(req.params.id);
 
-    const singleUnit = singleUnitdata.get({plain: true});
+    const singleUnit = singleUnitdata.get({ plain: true });
 
-    res.render('singleUnit', {...singleUnit, loggedIn: req.session.loggedIn});
+    res.render('singleUnit', { ...singleUnit, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
     res.status.json(err);
@@ -31,7 +31,7 @@ router.get('/unit/:id', async (req, res) => {
 
 // Login
 router.get('/login', (req, res) => {
-  if(req.session.loggedIn) {
+  if (req.session.loggedIn) {
     res.redirect('/dashboard')
   }
   res.render('login')
@@ -39,7 +39,7 @@ router.get('/login', (req, res) => {
 
 // Register
 router.get('/register', (req, res) => {
-  if(req.session.loggedIn) {
+  if (req.session.loggedIn) {
     res.redirect('/dashboard')
   }
   res.render('register')
