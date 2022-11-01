@@ -3,8 +3,8 @@ const UserRoutes = require('./UserRoutes');
 const WorkOrderRoutes = require('./WorkOrderRoutes');
 const UnitRoutes = require('./UnitRoutes');
 
-router.use('/Users', UserRoutes);
-router.use('/WorkOrder', WorkOrderRoutes);
-router.use('/Unit', UnitRoutes);
+router.use('/users', UserRoutes);
+router.use('/workorder', WorkOrderRoutes);
+router.use('/unit', UnitRoutes);
 
 module.exports = router;
