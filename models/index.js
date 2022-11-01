@@ -9,7 +9,6 @@ const Unit = require('./Unit');
 Role.hasMany(User, {
   foreignKey: 'role_id',
   onDelete: 'SET NULL'
-
 });
 
 // User has one unit
@@ -24,8 +23,10 @@ User.hasMany(WorkOrder, {
   onDelete: 'SET NULL'
 });
 
-// User has many payments
-
+WorkOrder.belongsTo(User, {
+  foreignKey: 'user_id',
+  onDelete: 'SET NULL'
+});
 
 // Units have many payments
 // Unit.hasMany(Payment, {
@@ -37,12 +38,8 @@ User.hasMany(WorkOrder, {
 //   foreignKey: 'unit_id'
 // });
 
-// WorkOrder.belongsTo(User,
-//   { foreignKey: 'user_id' }
-// )
 
-
-module.exports = { User, Role, WorkOrder, Unit};
+module.exports = { User, Role, WorkOrder, Unit };
 
 
 

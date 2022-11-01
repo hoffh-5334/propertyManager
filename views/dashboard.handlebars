@@ -2,35 +2,18 @@
   id="dashboard-container" class="d-flex flex-column justify-content-center align-items-md-center"
 >
 {{#if admin }}
-  <h1>Manager Dashbaord</h1>
-  <h5>Not actual design. Only a test for data.</h5>
-  {{#each data as |user|}}
-    <p>{{user.name}}</p>
-    <p>{{user.id}}</p>
-    <ul>
-      {{#if user.WorkOrders}}
-      {{#each user.WorkOrders as |wo|}}
-      <li>{{wo.id}}</li>
-      <li>{{format_date wo.date_created}}</li>
-      <li>{{wo.priority}}</li>
-      <li>{{wo.category}}</li>
-      <li>{{wo.fulfilled}}</li>
-      <li>{{wo.description}}</li>
-      {{/each}}
-      {{else}}
-      <p>no work orders</p>
-      {{/if}}
-    </ul>
-  {{/each}}
+  <section id="table-container" class="col-sm-12 col-md-9 col-lg-10 overflow-auto">
+  {{> managerWoTable}}
+  </section>
 {{else}}
   <section id="new-work-order-form-container" class="row col-sm-12 col-md-3 d-flex flex-column justify-content-center align-items-center">
     {{> formNewWorkOrder}}
   </section>
-  <section id="table-container" class="row col-sm-12 col-md-9 col-lg-6 overflow-auto">
+  <section id="table-container" class="row col-sm-12 col-md-12 col-lg-7 overflow-auto">
     {{> tableWorkOrder}}
   </section>
 </section>
-<!-- Update Work Order Modal -->
+{{/if }}
 <div
   class="modal fade"
   id="editWorkOrderModal"
@@ -52,12 +35,17 @@
         </button>
       </div>
       <div class="modal-body">
-        {{> modalFormUpdateWorkOrder}}
+        {{#if admin}}
+          {{> managerFormUpdateWo}}
+        {{else}}
+          {{> modalFormUpdateWorkOrder}}
+        {{/if}}
       </div>
     </div>
   </div>
 </div>
-
-{{/if }}
+{{#if admin}}
+<script src="/js/dashManager.js"></script>
+{{else}}
 <script src="/js/dash.js"></script>
-
+{{/if}}

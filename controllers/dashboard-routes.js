@@ -10,31 +10,25 @@ router.get('/', async (req, res) => {
     try {
         let userData;
         let data;
-        // Replace userId and admin with values from cookie
         let userId = req.session.user_id;
 
         if (req.session.admin) {
-            console.log("is admin")
-            userData = await User.findAll({
-                attributes: ['id', 'name', 'email', 'admin', 'role_id'],
-                include: [
-                    {
-                        model: WorkOrder,
-                        attribtes: ['id', 'pririty', 'category', 'description', 'fuffiled'],
-                    }
-                ]
+
+            userData = await WorkOrder.findAll({
+                attributes: ['id', 'date_created', 'priority', 'category', 'description', 'fulfilled', 'user_id'],
+                include: [{ model: User, include: { model: Unit } }],
+                order: [['date_created', 'DESC']]
             });
-            // console.log(userData)
             data = userData.map((item) => item.get({ plain: true }));
-            // console.log(data)
-            res.render('dashboard', { data, admin, loggedIn: req.session.loggedIn })
+            res.render('dashboard', { data, admin: req.session.admin, loggedIn: req.session.loggedIn })
+
         } else {
             userData = await User.findOne({
                 where: { id: userId },
                 attributes: ['id', 'name', 'email', 'admin', 'role_id'],
                 include: {
                     model: WorkOrder,
-                    attribtes: ['id', 'pririty', 'category', 'description', 'fuffiled'],
+                    attribtes: ['id', 'pririty', 'category', 'description', 'fulfilled'],
                 },
                 order: [[{ model: WorkOrder }, 'date_created', 'DESC']]
             });

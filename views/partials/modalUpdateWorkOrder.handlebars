@@ -20,7 +20,11 @@
         </button>
       </div>
       <div class="modal-body">
-        {{> modalFormUpdateWorkOrder}}
+        {{#if admin}}
+          {{> managerFormUpdateWo}}
+        {{else}}
+          {{> modalFormUpdateWorkOrder}}
+        {{/if}}
       </div>
     </div>
   </div>
