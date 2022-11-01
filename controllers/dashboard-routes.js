@@ -6,7 +6,7 @@ const { User, Role, Unit, WorkOrder } = require('../models');
 // Only allow logged-in users access to dashboard
 // router.use(auth);
 
-router.get('/', auth , async (req, res) => {
+router.get('/', auth, async (req, res) => {
     try {
         let userData;
         let data;
@@ -28,7 +28,7 @@ router.get('/', auth , async (req, res) => {
                 attributes: ['id', 'name', 'email', 'admin', 'role_id'],
                 include: {
                     model: WorkOrder,
-                    attributes: ['id', 'priority', 'category', 'description', 'fulfilled'],
+                    attributes: ['id', 'date_created', 'priority', 'category', 'description', 'fulfilled'],
                 },
                 order: [[{ model: WorkOrder }, 'date_created', 'DESC']]
             });

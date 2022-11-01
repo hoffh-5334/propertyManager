@@ -2,9 +2,9 @@
 module.exports = {
   format_date: (date) => {
     if (date) {
+      console.log(date)
       return date.toLocaleDateString();
     }
-    return;
   },
   // Text length restriction
   text_length_restrict: (str) => {
