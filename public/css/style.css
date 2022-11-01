@@ -208,3 +208,19 @@ padding: 15px;
   margin-top: 5px;
 }
 
+
+/* register page */
+#register-wrapper{
+  padding: 1rem;
+  min-width: 100%; 
+}
+
+
+.register-form{
+padding: 30px;
+}
+
+.register-btn{
+  margin-top: 5px;
+}
+
