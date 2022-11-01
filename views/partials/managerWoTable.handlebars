@@ -1,6 +1,7 @@
-{{#if data.WorkOrders }}
-<div class="row col-sm-12 col-md-6">
-  <h2>Work Orders</h2>
+<h2>Manager Dashbaord</h2>
+{{#if data }}
+<div class="row col-sm-12">
+  <h3>Work Orders</h3>
 </div>
 <table class="table">
   <thead class="thead-light">
@@ -10,29 +11,34 @@
       <th scope="col">Priority</th>
       <th scope="col">Category</th>
       <th scope="col">Description</th>
+      <th scope="col">Name</th>
+      <th scope="col">Unit#</th>
       <th scope="col">Fulfilled</th>
       <th scope="col"></th>
       <th scope="col"></th>
     </tr>
   </thead>
   <tbody>
-    {{#each data.WorkOrders as |wo|}}
+    {{#each data as |wo|}}
       <tr
         id="work-order-row"
         data-id={{wo.id}}
         data-priority={{wo.priority}}
         data-category={{wo.category}}
-        data-description={{wo.description}}
+        data-fulfilled={{wo.fulfilled}}
       >
         <th scope="row">{{wo.id}}</th>
         <td> {{format_date wo.date_created}}</td>
         <td><span
             class="badge badge-pill badge-{{setPriorityColor wo.priority}}"
           >{{wo.priority}}</span></td>
-        <td>{{wo.category}}</td>
+        <td id={{wo.id}}-category>{{wo.category}}</td>
         <td id={{wo.id}}-description>{{wo.description}}</td>
+        <td id={{wo.id}}-name>{{wo.User.name}}</td>
+        <td id={{wo.id}}-room_num>{{wo.User.Unit.room_num}}</td>
         <td id={{wo.id}}-fulfilled>{{wo.fulfilled}}</td>
         <td>
+          <!-- Button trigger modal -->
           <button
             type="button"
             class="btn btn-light tbl-btns edit"
@@ -63,6 +69,8 @@
       <th scope="col">Priority</th>
       <th scope="col">Category</th>
       <th scope="col">Description</th>
+      <th scope="col">Name</th>
+      <th scope="col">Unit#</th>
       <th scope="col">Fulfilled</th>
       <th scope="col"></th>
       <th scope="col"></th>
@@ -71,3 +79,4 @@
 </table>
 <h5>No work orders requested</h4>
 {{/if}}
+

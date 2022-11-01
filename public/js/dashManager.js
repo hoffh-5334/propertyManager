@@ -22,23 +22,12 @@ const workOrderFormHandler = async (event) => {
     };
 };
 
-// Submit new work order
-document
-    .querySelector('#work-order-form')
-    .addEventListener('submit', workOrderFormHandler);
-
-// Update each render of work order modal form
+// Update form values for work order modal
 $("#table-container").on("click", "#work-order-row", async function () {
     let workOrderId = $(this).data().id;
     $("#word-order-update-id-display").text(workOrderId);
-
     Object.entries($(this).data()).forEach(workOrder => {
-        if (workOrder[0] !== 'description') {
-            $(`#${workOrder[0]}-update`).val(workOrder[1]);
-        } else {
-            let desc = $(`#${workOrderId}-description`).text();
-            $(`#${workOrder[0]}-update`).val(desc);
-        }
+        $(`#${workOrder[0]}-update`).val(workOrder[1].toString());
     });
 });
 
@@ -50,7 +39,7 @@ $("#update-work-order-form").on("submit", async function (e) {
         id: document.querySelector('#id-update').value.trim(),
         priority: document.querySelector('#priority-update').value.trim(),
         category: document.querySelector('#category-update').value.trim(),
-        description: document.querySelector('#description-update').value.trim(),
+        fulfilled: document.querySelector('#fulfilled-update').value.trim(),
     };
 
     const res = await fetch('/api/WorkOrder', {

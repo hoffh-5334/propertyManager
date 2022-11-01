@@ -1,0 +1,35 @@
+<div id="work-order-update-form-wrapper">
+    <form id="update-work-order-form" class="row d-flex flex-column">
+        <h4>Work Order #<span id="word-order-update-id-display"></span></h4>
+        <input type="hidden" id="id-update" name="work-order-id-update">
+        <div class="form-group">
+            <label for="fulfilled-update">Fulfilled</label>
+            <select id="fulfilled-update" class="form-control">
+                <option value="true">True</option>
+                <option value="false">False</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="priority-update">Priority</label>
+            <select id="priority-update" class="form-control">
+                <option value="high">High</option>
+                <option value="medium">Medium</option>
+                <option value="low">Low</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="category-update">Category</label>
+            <select id="category-update" class="form-control">
+                {{> workOrderCategoryOptions}}
+            </select>
+        </div>
+        <div class="modal-footer">
+            <button
+            type="button"
+            class="btn btn-secondary"
+            data-dismiss="modal"
+            >Close</button>
+            <input type="submit" value="Save Changes" class="btn btn-primary"></input>
+        </div>
+    </form>
+</div>
