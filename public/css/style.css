@@ -192,3 +192,19 @@ a:hover {
   background-color: none;
   outline: none;
 }
+
+/* login page */
+#login-wrapper{
+  padding: 1rem;
+  min-width: 100%; 
+}
+
+
+.login-form{
+padding: 15px;
+}
+
+.login-btn{
+  margin-top: 5px;
+}
+
