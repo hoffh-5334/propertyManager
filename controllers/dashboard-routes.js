@@ -28,7 +28,7 @@ router.get('/', async (req, res) => {
                 attributes: ['id', 'name', 'email', 'admin', 'role_id'],
                 include: {
                     model: WorkOrder,
-                    attribtes: ['id', 'pririty', 'category', 'description', 'fulfilled'],
+                    attributes: ['id', 'priority', 'category', 'description', 'fulfilled'],
                 },
                 order: [[{ model: WorkOrder }, 'date_created', 'DESC']]
             });
