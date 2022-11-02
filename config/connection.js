@@ -1,7 +1,6 @@
 const Sequelize = require('sequelize');
 require('dotenv').config();
 
-
 let sequelize;
 if (process.env.MYSQL_URL) {
   sequelize = new Sequelize(process.env.MYSQL_URL);

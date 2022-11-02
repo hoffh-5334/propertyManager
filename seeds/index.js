@@ -5,7 +5,6 @@ const seedUser = require('./UserData');
 const seedUnit = require('./UnitData');
 const seedRole = require('./RoleData');
 const seedWorkOrders = require('./WorkOrderData');
-// const seedPayment = require('./PaymentData');
 
 const seedDatabase = async () => {
     await sequelize.sync({ force: true });
@@ -14,7 +13,6 @@ const seedDatabase = async () => {
     await seedUser();
     await seedUnit();
     await seedWorkOrders();
-
 
     process.exit(0);
 };
