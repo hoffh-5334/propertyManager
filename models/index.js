@@ -28,17 +28,6 @@ WorkOrder.belongsTo(User, {
   onDelete: 'SET NULL'
 });
 
-// Units have many payments
-// Unit.hasMany(Payment, {
-//   foreignKey: 'unit_id'
-// });
-
-// Units have many payments
-// Payment.belongsTo(Unit, {
-//   foreignKey: 'unit_id'
-// });
-
-
 module.exports = { User, Role, WorkOrder, Unit };
 
 

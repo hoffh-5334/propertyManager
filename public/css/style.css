@@ -74,25 +74,6 @@ a:hover {
   height: auto;
 }
 
-/* Image Carousel */
-.image-slider {
-  clear: both;
-  overflow: hidden;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.slick {
-  width: 50%;
-}
-
-.slider-image {
-  width: 100%;
-  height: auto;
-}
-
 /* Unit Cards */
 .unit-card-section {
   display: flex;

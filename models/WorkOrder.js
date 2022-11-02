@@ -3,7 +3,6 @@ const sequelize = require('../config/connection');
 
 class WorkOrder extends Model { }
 
-
 WorkOrder.init(
   {
     id: {

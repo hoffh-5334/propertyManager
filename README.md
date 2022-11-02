@@ -16,7 +16,7 @@ This application uses the MVC paradigm for structure and Express Handlebars for 
 
 The team behind MMHD Residences Property Management includes the following collaborators:
 
-* Jared Mabus
+* Jared Mabusth
 * Mariam Mohamed
 * Holly Hoffman
 * Shannon Dann
